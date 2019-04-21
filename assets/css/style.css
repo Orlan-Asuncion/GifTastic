@@ -1,0 +1,67 @@
+.bg{
+     
+    background-position: center center;
+    background-size: cover; 
+    background-color: #ffffffb4;
+     background-repeat: no-repeat; 
+}
+ .container{
+    width: auto;
+    height: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(27, 3, 3);
+    
+
+ }
+ .display-4{
+     background: transparent;
+     color: white;
+ }
+#input{
+    background: rgb(93, 120, 236);
+    font-size: 24px;
+    color:rgb(81, 63, 156);
+    width:150px;
+    height: 50px;
+  
+}
+#input:hover{
+    background-color: rgb(78, 231, 231);
+    cursor: pointer;
+    transition: width 2s height 3s;
+    padding: 5px;
+}
+button{
+    background-color:rgb(106, 129, 233); 
+    color:rgb(21, 184, 196);
+    width:150px;
+    height: 50px;
+    font-size: 24px;
+    margin: 5px;
+    
+ 
+}
+/* button:hover{
+    background-color:rgb(93, 120, 236); 
+    color:rgb(158, 6, 57);
+    width:200px;
+    height: 75px;
+    font-size: 24px;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: 2px 3px;
+    transition: width 2s, height 3s;
+}     */
+#submit{
+    background-color: rgb(93, 120, 236); 
+    width: 80px;
+    height: 35px;
+s
+}
+.form-control{
+    width: 250px;
+    height: 75px;
+    font-size: 24px
+}
