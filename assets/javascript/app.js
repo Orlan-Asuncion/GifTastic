@@ -1,13 +1,13 @@
-//alert("connected");
+$(document).ready(function(){
 
 
 var topics =["leopard", "cheetah", "macaw", "impala", "birds", "kangaroo","zebra", "Iguana", "horses", "lion", "tiger", "ostrich","eagle", "buffalo", "giraffe", "camel", "monkeys", "jaguar"]
 
-$(document).ready();{
+// $(document).ready();{
 
 function displayGifs(){
   
-     $("#animalGifs").empty();
+     $("#animal-Gifs").empty();
   
   }
 
@@ -31,13 +31,13 @@ animal + "&api_key=Zd6cDW9560jLDNXmbdBgLWPO3wWucf5P&limit=10";
   console.log(results);
 // Looping every result item
   for(var i = 0; i < results.length; i++){
-    // var animalGifsDiv =$("<div>");
+    
 //Storing the result's item rating
     var rating = results[i].rating;
 
 // Creating a paragraph tag with the result item's rating
 
-if(results[i].rating !== "r"  && results[i].rating !== "pg13"){
+if(results[i].rating !== "r" ){
 
   var gifSpan = $("<Span>Rating:" + rating + "<br><br></span>");
 
@@ -57,7 +57,7 @@ if(results[i].rating !== "r"  && results[i].rating !== "pg13"){
 // Append the paragraph and animalImage that create in the gif div
     
    gifSpan.append(animalImage);
-   $("#animalGifs").append(gifSpan);
+   $("#animal-Gifs").append(gifSpan);
 
     };
   }
@@ -71,7 +71,7 @@ if(results[i].rating !== "r"  && results[i].rating !== "pg13"){
      for(var i = 0; i < topics.length; i++){
        var b = $("<button>");
        b.attr("data-name", topics[i]);
-       b.addClass("buttonView")
+       b.addClass("gifButton")
        b.text(topics[i]);
        $("#gif-buttons").append(b);
      };
@@ -92,15 +92,14 @@ if(results[i].rating !== "r"  && results[i].rating !== "pg13"){
 
      });
 
-      $(document).on("click", ".animalGifs", displayGifs);
-      renderButton();
+     
 
-     $(document).on("click", ".animalGifs" , animateGif);
-      console.log("bye");
+     $(document).on("click", "img" , animateGif);
+      //console.log("hello");
      function animateGif(){
        var state =$(this).attr("data-state");
-       if(state ==="still"){
-         $(this).attr("src",$(this).attr("data-animate"));
+       if(state === "still"){
+         $(this).attr("src", $(this).attr("data-animate"));
          $(this).attr("data-state", "animate");
          console.log(this);
        }
@@ -110,8 +109,9 @@ if(results[i].rating !== "r"  && results[i].rating !== "pg13"){
        }
      };
      
-    
+     $(document).on("click", ".gifButton", displayGifs);
+      renderButton();
        
      
-      $("body").css("background-image",'url(assets/images/landscape-2494653_1280.jpg');
-    }; 
+      $("body").css("background-image",'url(assets/images/ngorongoro-safari.jpg');
+    }); 
