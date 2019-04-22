@@ -3,19 +3,13 @@ $(document).ready(function(){
 
 var topics =["leopard", "cheetah", "macaw", "impala", "birds", "kangaroo","zebra", "Iguana", "horses", "lion", "tiger", "ostrich","eagle", "buffalo", "giraffe", "camel", "monkeys", "jaguar"]
 
-// $(document).ready();{
 
-function displayGifs(){
-  
-     $("#animal-Gifs").empty();
-  
-  }
-
-  var animal = $(this).attr("data-animal");
-
+function displayGifs(element){
  
-//Construct a URL to search gihpy of animals
-var  queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+ console.log($(this));
+     $("#animal-Gifs").empty();
+     var animal = $(this).attr("data-animal");
+     var  queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
 animal + "&api_key=Zd6cDW9560jLDNXmbdBgLWPO3wWucf5P&limit=10";
 
 //Perform an AJAX GET request
@@ -45,9 +39,9 @@ if(results[i].rating !== "r" ){
     var animalImage = $("<img>");
 
 // Give the image tag a src attribute of a property pulled of the result items.
-    animalImage.attr("src", results[i].images.fixed_height.still);
-    animalImage.attr("data-state", "still");
-    animalImage.attr("data-still", results[i].images.fixed_height.url);
+    animalImage.attr("src", results[i].images.fixed_height_still.url);
+    animalImage.attr("data-state", "still");  
+    animalImage.attr("data-still", results[i].images.fixed_height_still.url);
     animalImage.attr("data-animate", results[i].images.fixed_height.url);
     animalImage.attr("align", "left");
     animalImage.attr("class", "gif");
@@ -62,10 +56,13 @@ if(results[i].rating !== "r" ){
     };
   }
 });
+}
+
+
 
    //render button from array
 
-   function renderButton(){
+   function renderButtons(){
      $("#gif-buttons").empty();
 
      for(var i = 0; i < topics.length; i++){
@@ -77,7 +74,7 @@ if(results[i].rating !== "r" ){
      };
      };
 
-     $("#addAnimalGif").on("click", function(event){
+     $("#submit").on("click", function(event){
        console.log("hello");
         event.preventDefault();
 
@@ -91,8 +88,6 @@ if(results[i].rating !== "r" ){
       
 
      });
-
-     
 
      $(document).on("click", "img" , animateGif);
       //console.log("hello");
@@ -110,8 +105,8 @@ if(results[i].rating !== "r" ){
      };
      
      $(document).on("click", ".gifButton", displayGifs);
-      renderButton();
+      renderButtons();
        
      
       $("body").css("background-image",'url(assets/images/ngorongoro-safari.jpg');
-    }); 
+}); 
