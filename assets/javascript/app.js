@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 
-  var topics = ["leopard", "cheetah", "macaw", "impala", "birds", "kangaroo", "zebra", "Iguana", "horses", "lion", "tiger", "ostrich", "eagle", "buffalo", "giraffe", "camel", "monkeys", "jaguar"]
+  var topics = ["leopard", "cheetah", "macaw", "dog", "birds", "kangaroo", "zebra", "Iguana", "horses", "lion", "tiger", "ostrich", "eagle", "buffalo", "giraffe", "camel", "monkeys", "jaguar"]
 
   //
   function displayGifs(element) {
